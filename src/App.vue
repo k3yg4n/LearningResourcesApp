@@ -1,16 +1,20 @@
 <template>
+  <the-header :title="appTitle"></the-header>
   <stored-interests :interests="storedInterests"></stored-interests>
 </template>
 
 <script>
 import StoredInterests from './components/interest/StoredInterests.vue';
+import TheHeader from './components/layouts/TheHeader.vue';
 
 export default {
   components: {
     'stored-interests': StoredInterests,
+    'the-header': TheHeader,
   },
   data() {
     return {
+      appTitle: 'Keegan Liu - More About Me',
       storedInterests: [
         {
           id: 'favourite-album',

@@ -1,15 +1,15 @@
 <template>
   <li>
-    <div>
+    <base-card>
       <header>
         <h3>{{ title }}</h3>
         <button>Remove</button>
       </header>
-    </div>
-    <p>{{ description }}</p>
-    <nav>
-      <a :href="link">Learn more...</a>
-    </nav>
+      <p>{{ description }}</p>
+      <nav>
+        <a :href="link">Learn more...</a>
+      </nav>
+    </base-card>
   </li>
 </template>
 
@@ -47,11 +47,11 @@ p {
 
 a {
   text-decoration: none;
-  color: #ce5c00;
+  color: #349bf6;
 }
 
 a:hover,
 a:active {
-  color: #c89300;
+  color: #53a6e7;
 }
 </style>
