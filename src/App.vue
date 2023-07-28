@@ -1,6 +1,9 @@
 <template>
   <the-header :title="appTitle"></the-header>
-  <stored-interests :interests="storedInterests"></stored-interests>
+  <stored-interests
+    :interests="storedInterests"
+    @remove-interest="removeInterest"
+  ></stored-interests>
 </template>
 
 <script>
@@ -30,6 +33,13 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    removeInterest(interestIdToDel) {
+      this.StoredInterests = this.StoredInterests.filter(
+        (interest) => interest.id !== interestIdToDel
+      );
+    },
   },
 };
 </script>
