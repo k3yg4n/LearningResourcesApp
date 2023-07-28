@@ -1,20 +1,13 @@
 <template>
-  <ul>
-    <interest-block
-      v-for="int in storedInterests"
-      :key="int.id"
-      :title="int.title"
-      :description="int.description"
-      :link="int.link"
-    ></interest-block>
-  </ul>
+  <stored-interests :interests="storedInterests"></stored-interests>
 </template>
 
 <script>
-import Interest from './components/interest/InterestBlock.vue';
+import StoredInterests from './components/interest/StoredInterests.vue';
+
 export default {
   components: {
-    'interest-block': Interest,
+    'stored-interests': StoredInterests,
   },
   data() {
     return {
@@ -36,3 +29,20 @@ export default {
   },
 };
 </script>
+
+<!-- Application wide styling -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
