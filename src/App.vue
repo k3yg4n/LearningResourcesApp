@@ -1,37 +1,20 @@
 <template>
   <the-header :title="appTitle"></the-header>
-  <stored-interests
-    :interests="storedInterests"
-    @remove-interest="removeInterest"
-  ></stored-interests>
+  <the-interests></the-interests>
 </template>
 
 <script>
-import StoredInterests from './components/interest/StoredInterests.vue';
 import TheHeader from './components/layouts/TheHeader.vue';
+import TheInterests from './components/interest/TheInterests.vue';
 
 export default {
   components: {
-    'stored-interests': StoredInterests,
     'the-header': TheHeader,
+    'the-interests': TheInterests,
   },
   data() {
     return {
       appTitle: 'Keegan Liu - More About Me',
-      storedInterests: [
-        {
-          id: 'favourite-album',
-          title: 'My favourite album',
-          description: 'This is my favourite album.',
-          link: 'https://google.com',
-        },
-        {
-          id: 'google',
-          title: 'Google',
-          description: 'Learn to google...',
-          link: 'https://google.com',
-        },
-      ],
     };
   },
   methods: {

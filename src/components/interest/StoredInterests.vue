@@ -14,9 +14,7 @@
 import InterestBlock from './InterestBlock.vue';
 
 export default {
-  props: {
-    interests: Array,
-  },
+  inject: ['interests'], // From TheInterests
   components: {
     'interest-block': InterestBlock,
   },
