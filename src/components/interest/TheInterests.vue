@@ -31,15 +31,16 @@ export default {
       storedInterests: [
         {
           id: 'favourite-album',
-          title: 'My favourite album',
-          description: 'This is my favourite album.',
-          link: 'https://google.com',
+          title: 'MadVillainy - Madvillain',
+          description: 'This is one of my favourite albums.',
+          link: 'https://en.wikipedia.org/wiki/Madvillainy',
         },
         {
-          id: 'google',
-          title: 'Google',
-          description: 'Learn to google...',
-          link: 'https://google.com',
+          id: 'favourite-past-time',
+          title: 'Fishing',
+          description:
+            'One of the greatest hobbies of all time. I love catching bass.',
+          link: 'https://media.tenor.com/eXn-LAXYF5YAAAAS/pog-pogfish.gif',
         },
       ],
     };
