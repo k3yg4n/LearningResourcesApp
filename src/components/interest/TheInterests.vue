@@ -12,7 +12,7 @@
     >
   </base-card>
   <keep-alive>
-    <component :is="selectedTab" @add-new-interest="addNewInterest"></component>
+    <component :is="selectedTab"></component>
   </keep-alive>
 </template>
 
