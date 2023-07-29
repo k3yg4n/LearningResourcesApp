@@ -1,18 +1,23 @@
 <template>
   <base-card>
     <h2>Add New Interest</h2>
-    <form>
+    <form @submit.prevent="addNewInterest">
       <div class="form-control">
         <label for="title">Title: </label>
-        <input id="title" name="title" type="text" />
+        <input id="title" name="title" type="text" ref="newTitle" />
       </div>
       <div class="form-control">
         <label for="description">Description: </label>
-        <textarea id="description" name="description" rows="3"></textarea>
+        <textarea
+          id="description"
+          name="description"
+          rows="3"
+          ref="newDesc"
+        ></textarea>
       </div>
       <div class="form-control">
         <label for="link">Link: </label>
-        <input id="link" name="link" type="url" />
+        <input id="link" name="link" type="url" ref="newLink" />
       </div>
       <div>
         <base-button type="submit">Add Interest</base-button>
@@ -21,7 +26,24 @@
   </base-card>
 </template>
 
-<script></script>
+<script>
+export default {
+  inject: ['addInterest'],
+  methods: {
+    addNewInterest() {
+      const newTitle = this.$refs.newTitle.value;
+      const newDesc = this.$refs.newDesc.value;
+      const newLink = this.$refs.newLink.value;
+
+      if (newTitle === '' || newDesc === '' || newLink === '') {
+        alert('ERROR: Please fill out all fields.');
+      } else {
+        this.addInterest(newTitle, newDesc, newLink);
+      }
+    },
+  },
+};
+</script>
 
 <style scoped>
 label {

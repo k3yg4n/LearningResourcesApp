@@ -11,7 +11,7 @@
       >Add New Interests</base-button
     >
   </base-card>
-  <component :is="selectedTab"></component>
+  <component :is="selectedTab" @add-new-interest="addNewInterest"></component>
 </template>
 
 <script>
@@ -45,11 +45,22 @@ export default {
   provide() {
     return {
       interests: this.storedInterests,
+      addInterest: this.addNewInterest,
     };
   },
   methods: {
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+    addNewInterest(newTitle, newDesc, newLink) {
+      const newInterest = {
+        id: new Date().toISOString(),
+        title: newTitle,
+        description: newDesc,
+        link: newLink,
+      };
+      this.storedInterests.unshift(newInterest);
+      this.selectedTab = 'stored-interests';
     },
   },
   computed: {
