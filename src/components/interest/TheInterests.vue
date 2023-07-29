@@ -48,6 +48,7 @@ export default {
     return {
       interests: this.storedInterests,
       addInterest: this.addNewInterest,
+      removeInterest: this.removeInterest,
     };
   },
   methods: {
@@ -63,6 +64,19 @@ export default {
       };
       this.storedInterests.unshift(newInterest);
       this.selectedTab = 'stored-interests';
+    },
+    removeInterest(interestId) {
+      // This does not work as it overrides storedInterests
+      // with a brand new array which is not provided to the
+      // rest of the components.
+      // this.storedInterests = this.storedInterests.filter(
+      //   (interest) => interest.id !== interestId
+      // );
+      // Alternative approach:
+      const intIndex = this.storedInterests.findIndex(
+        (int) => int.id === interestId
+      );
+      this.storedInterests.splice(intIndex, 1);
     },
   },
   computed: {

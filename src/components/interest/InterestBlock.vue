@@ -3,7 +3,9 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat"> Remove </base-button>
+        <base-button mode="flat" @click="removeInterest(id)">
+          Remove
+        </base-button>
       </header>
       <p>{{ description }}</p>
       <nav>
@@ -16,11 +18,12 @@
 <script>
 export default {
   props: {
-    key: String,
+    id: String,
     title: String,
     description: String,
     link: String,
   },
+  inject: ['removeInterest'],
 };
 </script>
 

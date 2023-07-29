@@ -3,6 +3,7 @@
     <interest-block
       v-for="int in interests"
       :key="int.id"
+      :id="int.id"
       :title="int.title"
       :description="int.description"
       :link="int.link"
