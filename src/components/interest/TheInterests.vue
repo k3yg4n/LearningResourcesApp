@@ -11,7 +11,9 @@
       >Add New Interests</base-button
     >
   </base-card>
-  <component :is="selectedTab" @add-new-interest="addNewInterest"></component>
+  <keep-alive>
+    <component :is="selectedTab" @add-new-interest="addNewInterest"></component>
+  </keep-alive>
 </template>
 
 <script>
